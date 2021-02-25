@@ -16,7 +16,7 @@ function addTodo(event) {
 
   // Create li
   const newTodo = document.createElement("li");
-  newTodo.innerText = "Hey";
+  newTodo.innerText = todoInput.value;
   newTodo.classList.add("todo-item");
 
   // Add new Todo to todoDiv
@@ -32,12 +32,15 @@ function addTodo(event) {
 
   // Trash Button
   const trashButton = document.createElement("button");
-  completedButton.innerHTML = '<i class="fas fa-trash"></i>';
-  completedButton.classList.add("complete-btn");
+  trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+  trashButton.classList.add("trash-btn");
 
   // Add Button to todoDiv
   todoDiv.appendChild(trashButton);
 
   // Attach the Big Div to actual ul - Todo List
   todoList.appendChild(todoDiv);
+
+  // Clear todo Input value
+  todoInput.value = "";
 }
